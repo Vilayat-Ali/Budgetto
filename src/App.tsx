@@ -1,6 +1,6 @@
 // lib
 import React from 'react';
-import {View, Text} from 'react-native';
+import {NativeBaseProvider} from 'native-base';
 
 // redux
 import {Provider} from 'react-redux';
@@ -12,6 +12,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 // screens
 import HomeScreen from './screens/HomeScreen';
+import SectionListingScreen from './screens/SectionListingScreen';
 import SettingScreen from './screens/SettingScreen';
 
 const App = () => {
@@ -19,14 +20,17 @@ const App = () => {
   const {Navigator, Screen} = createNativeStackNavigator();
 
   return (
-    <Provider store={store}>
-      <NavigationContainer>
-        <Navigator>
-          <Screen name="Home" component={HomeScreen} />
-          <Screen name="Settings" component={SettingScreen} />
-        </Navigator>
-      </NavigationContainer>
-    </Provider>
+    <NativeBaseProvider>
+      <Provider store={store}>
+        <NavigationContainer>
+          <Navigator>
+            <Screen name="Home" component={HomeScreen} />
+            <Screen name="Saved Sections" component={SectionListingScreen} />
+            <Screen name="Settings" component={SettingScreen} />
+          </Navigator>
+        </NavigationContainer>
+      </Provider>
+    </NativeBaseProvider>
   );
 };
 

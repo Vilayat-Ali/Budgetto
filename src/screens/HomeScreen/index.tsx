@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, Button} from 'native-base';
 
 type Props = {
   navigation: any;
@@ -9,10 +9,9 @@ const HomeScreen = ({navigation}: Props) => {
   return (
     <View>
       <Text>Hello, Home Page</Text>
-      <Button
-        title="Go somewhere"
-        onPress={() => navigation.navigate('Settings')}
-      />
+      <Button onPress={() => navigation.navigate('Settings')}>
+        Go somewhere
+      </Button>
     </View>
   );
 };
