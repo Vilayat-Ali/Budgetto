@@ -1,7 +1,7 @@
 // lib
 import {useState, Dispatch, useCallback, SetStateAction} from 'react';
 
-const useToggle = (initialState: Boolean = false) => {
+export const useToggle = (initialState: Boolean = false) => {
   // states
   const [componentState, setComponentState]: [
     Boolean,
@@ -17,5 +17,3 @@ const useToggle = (initialState: Boolean = false) => {
   // return
   return [componentState, Toggle] as const;
 };
-
-export default useToggle;

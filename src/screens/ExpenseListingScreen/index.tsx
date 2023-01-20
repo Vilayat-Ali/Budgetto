@@ -6,7 +6,7 @@ type Props = {
   navigation: any;
 };
 
-const HomeScreen = ({navigation}: Props) => {
+const ExpenseListingScreen = ({navigation}: Props) => {
   return (
     <View>
       <Text>Hello, Home Page</Text>
@@ -15,4 +15,4 @@ const HomeScreen = ({navigation}: Props) => {
   );
 };
 
-export default HomeScreen;
+export default ExpenseListingScreen;
