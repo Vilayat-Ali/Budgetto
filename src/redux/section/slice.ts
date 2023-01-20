@@ -10,18 +10,18 @@ const sectionSlice = createSlice({
   initialState,
   reducers: {
     // add a section
-    add: (state, action) => {
+    add: (state: any, action: any) => {
       state.sections.push(action.payload);
     },
     // remove a section
-    remove: (state, action) => {
+    remove: (state: any, action: any) => {
       state.sections = state.sections.filter(
-        section => section.id !== action.payload,
+        (section: any) => section.id !== action.payload,
       );
     },
   },
 });
 
-export const getSectionState = state => state.section;
+export const getSectionState = (state: any) => state.section;
 export const {add, remove} = sectionSlice.actions;
 export const sectionReducer = sectionSlice.reducer;
